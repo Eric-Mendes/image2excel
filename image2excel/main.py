@@ -8,7 +8,7 @@ from PIL import Image
 
 if __name__ == "__main__":
     # Loading the image as a PIL Image
-    image_name = "herobrine.jpeg"  # it should have the extension with it
+    image_name = "this_is_fine.png"  # it should have the extension with it
     img = Image.open(f"images/{image_name}").convert("RGB")
 
     # Resizing it and getting it as a 2d list with the RGB colors of each pixel
