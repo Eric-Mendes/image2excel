@@ -19,17 +19,17 @@ pipenv install
 1. Get any image you want and put it inside the `images/` folder;
 2. Correctly pass the path to the image_name string on this line: 
 ```python
-image_name = ""  # it should have the extension with it
+image_name = "this_is_fine.png"  # it should have the extension with it
 ```
-3. Lower the dimensions a little so that nothing breaks (<strong>a big image might break the code or your excel when you try to open the output file</strong>):
+3. Lower the dimensions a little by a factor so that nothing breaks (<strong>a big image might break the code or your excel when you try to open the output file</strong>):
 ```python
-img = img.resize((img.size[0]//6, img.size[1]//2))
+FACTOR: int = 5  # just an example of a number
 ```
-*What's the best dimensions for your image? You have to find that out by trying different numbers when you resize it. We still don't have a nice way of checking that :(*
+*What's the best factor for your image? You have to find that out by trying different numbers when you resize it. We still don't have a nice way of checking that :(*
 
-4. Run the code (keep in mind that you need to be inside the pipenv shell):
+4. From source, run the code (keep in mind that you need to be inside the pipenv shell):
 ```bash
-python3 main.py
+python3 image2excel/main.py
 ```
 The output will be inside the `spreadsheets/` folder and it'll be a `.xlsx` file with the same name of your image.
 
