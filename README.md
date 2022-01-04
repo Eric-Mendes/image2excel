@@ -31,7 +31,7 @@ Essentially all you need is to get your image ready and tweak the parameters on 
 
     - `factor=5`
 
-    - *What's the best factor for your image? You have to find that out by trying different numbers when you resize it. We still don't have a nice way of checking that :(*
+        - *What's the best factor for your image? You have to find that out by trying different numbers when you resize it. We still don't have a nice way of checking that :(*
 
 4. `row_height` and `column_width` were specifically set to make the cells a square so it looks even more like a pixel, but those hardcoded numbers might not look good on your screen since different computers have different viewports. You can tweak them if necessary.
 
