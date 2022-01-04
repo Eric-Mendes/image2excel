@@ -18,7 +18,7 @@ pipenv install
 ## Running the project
 Essentially all you need is to get your image ready and tweak the parameters on the `image2excel/config.ini` file. No manipulation of the `main.py` file is necessary.
 
-1. Get any image you want and put it inside the `images/` folder <strong>OR</strong> copy the url of an image on google images;
+1. Get any image you want and put it inside the `images/` folder <strong>OR</strong> copy the url of an image on the internet;
 
     - <strong>IMPORTANT:</strong> passing an url will download the image into the `images/` folder. If you think that some url looks sketchy, do <strong>not</strong> use it.
 
