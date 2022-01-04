@@ -1,6 +1,8 @@
 import os
+import urllib.request
 from configparser import ConfigParser
 
+import validators
 import numpy as np
 import pandas as pd
 from openpyxl import load_workbook, styles, utils
@@ -12,7 +14,14 @@ if __name__ == "__main__":
     default_configs = config_parser["DEFAULT"]
 
     # Loading the image as a PIL Image
-    image_name = default_configs["image_name"]
+    image_name = default_configs["image"]
+    if validators.url(image_name):
+        urllib.request.urlretrieve(
+            image_name, 
+            f"images/{os.path.split(image_name)[1]}"
+        )
+        image_name = os.path.split(image_name)[1]
+
     img = Image.open(f"images/{image_name}").convert("RGB")
 
     # Resizing it and getting it as a 2d list with the RGB colors of each pixel
