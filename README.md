@@ -18,10 +18,14 @@ pipenv install
 ## Running the project
 Essentially all you need is to get your image ready and tweak the parameters on the `image2excel/config.ini` file. No manipulation of the `main.py` file is necessary.
 
-1. Get any image you want and put it inside the `images/` folder;
-2. Correctly pass the path to the image_name: 
+1. Get any image you want and put it inside the `images/` folder <strong>OR</strong> copy the url of an image on google images;
 
-    `image_name=this_is_fine.png`
+    <strong>IMPORTANT:</strong> passing an url will download the image into the `images/` folder. If you think that some url looks sketchy, do <strong>not</strong> use it.
+
+2. Correctly pass the path or the url to the image string: 
+
+    - `image=this_is_fine.png` <strong>or</strong>
+    - `image=https://media.geeksforgeeks.org/wp-content/uploads/20210318103632/gfg-300x300.png` (*just an example of an url*)
 
 3. Lower the dimensions a little by a factor so that nothing breaks (<strong>a big image might break the code or your excel when you try to open the output file</strong>):
 
