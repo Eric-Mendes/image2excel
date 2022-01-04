@@ -167,5 +167,6 @@ images/*
 spreadsheets/*
 !images/this_is_fine.png
 !spreadsheets/this_is_fine.xlsx
+image2excel/config.ini
 
 # End of https://www.toptal.com/developers/gitignore/api/python,visualstudiocode
