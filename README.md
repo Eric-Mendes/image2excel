@@ -20,7 +20,7 @@ Essentially all you need is to get your image ready and tweak the parameters on 
 
 1. Get any image you want and put it inside the `images/` folder <strong>OR</strong> copy the url of an image on google images;
 
-    <strong>IMPORTANT:</strong> passing an url will download the image into the `images/` folder. If you think that some url looks sketchy, do <strong>not</strong> use it.
+    - <strong>IMPORTANT:</strong> passing an url will download the image into the `images/` folder. If you think that some url looks sketchy, do <strong>not</strong> use it.
 
 2. Correctly pass the path or the url to the image string: 
 
@@ -29,13 +29,11 @@ Essentially all you need is to get your image ready and tweak the parameters on 
 
 3. Lower the dimensions a little by a factor so that nothing breaks (<strong>a big image might break the code or your excel when you try to open the output file</strong>):
 
-    `factor=5`
+    - `factor=5`
 
-*What's the best factor for your image? You have to find that out by trying different numbers when you resize it. We still don't have a nice way of checking that :(*
+    - *What's the best factor for your image? You have to find that out by trying different numbers when you resize it. We still don't have a nice way of checking that :(*
 
-4. `row_height` and `column_width` were specifically set to make the cells a square so it looks even more like a pixel, but those hardcoded numbers might not look good on your screen since different computers have different viewports.
-
-    You can tweak them if necessary.
+4. `row_height` and `column_width` were specifically set to make the cells a square so it looks even more like a pixel, but those hardcoded numbers might not look good on your screen since different computers have different viewports. You can tweak them if necessary.
 
 5. `cell_value` assumes True or False. By default it is False, which means: do not display any text on the cells.
 
