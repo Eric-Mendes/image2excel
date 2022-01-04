@@ -1,18 +1,22 @@
 import os
+from configparser import ConfigParser
 
 import numpy as np
 import pandas as pd
 from openpyxl import load_workbook, styles, utils
 from PIL import Image
 
-
 if __name__ == "__main__":
+    config_parser = ConfigParser()
+    config_parser.read("image2excel/config.ini")
+    default_configs = config_parser["DEFAULT"]
+
     # Loading the image as a PIL Image
-    image_name = "this_is_fine.png"  # it should have the extension with it
+    image_name = default_configs["image_name"]
     img = Image.open(f"images/{image_name}").convert("RGB")
 
     # Resizing it and getting it as a 2d list with the RGB colors of each pixel
-    FACTOR: int = 5
+    FACTOR = int(default_configs["factor"])
     img = img.resize((img.size[0] // FACTOR, img.size[1] // FACTOR))
     arr = np.array(img).tolist()
     # OpenPyxl colors work in a weird way
@@ -25,7 +29,6 @@ if __name__ == "__main__":
     # Saving a DataFrame where each cell has a text corresponding to the RGB color its background should be
     df.to_excel(f"spreadsheets/{image_name}.xlsx", index=False, header=False)
 
-
     # Loading the excel file, painting each cell with its color and saving the updates
     wb = load_workbook(f"spreadsheets/{image_name}.xlsx")
 
@@ -37,8 +40,10 @@ if __name__ == "__main__":
             cell = ws.cell(row=row, column=col)
             # Attempt to make cell a square
             # You can tweak these numbers to make the image better for you
-            ws.row_dimensions[row].height = 15
-            ws.column_dimensions[utils.get_column_letter(col)].width = 2.30
+            ws.row_dimensions[row].height = float(default_configs["row_height"])
+            ws.column_dimensions[utils.get_column_letter(col)].width = float(
+                default_configs["column_width"]
+            )
 
             # Painting the cell
             cell.fill = styles.PatternFill(
@@ -46,8 +51,9 @@ if __name__ == "__main__":
                 end_color=cell.value,
                 fill_type="solid"
             )
-            cell.value = None  # Optional: deletes the text from the cell
+            if not default_configs.getboolean("cell_value"):
+                cell.value = None  # Deletes the text from the cell
 
     # Saves spreadsheet already zoomed out
-    ws.sheet_view.zoomScale = 20
+    ws.sheet_view.zoomScale = int(default_configs["zoom_scale"])
     wb.save(f"spreadsheets/{image_name}.xlsx")

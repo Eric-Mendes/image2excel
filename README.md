@@ -16,18 +16,28 @@ pipenv install
 ```
 
 ## Running the project
+Essentially all you need is to get your image ready and tweak the parameters on the `image2excel/config.ini` file. No manipulation of the `main.py` file is necessary.
+
 1. Get any image you want and put it inside the `images/` folder;
-2. Correctly pass the path to the image_name string on this line: 
-```python
-image_name = "this_is_fine.png"  # it should have the extension with it
-```
+2. Correctly pass the path to the image_name: 
+
+    `image_name=this_is_fine.png`
+
 3. Lower the dimensions a little by a factor so that nothing breaks (<strong>a big image might break the code or your excel when you try to open the output file</strong>):
-```python
-FACTOR: int = 5  # just an example of a number
-```
+
+    `factor=5`
+
 *What's the best factor for your image? You have to find that out by trying different numbers when you resize it. We still don't have a nice way of checking that :(*
 
-4. From source, run the code (keep in mind that you need to be inside the pipenv shell):
+4. `row_height` and `column_width` were specifically set to make the cells a square so it looks even more like a pixel, but those hardcoded numbers might not look good on your screen since different computers have different viewports.
+
+    You can tweak them if necessary.
+
+5. `cell_value` assumes True or False. By default it is False, which means: do not display any text on the cells.
+
+6. `zoom_scale` is the spreadsheet's zoom scale. By default it is 20 - the max zoom out possible - but you can also tweak this parameter if necessary. Keep in mind that it has to be an integer.
+
+7. From source, run the code (keep in mind that you need to be inside the pipenv shell):
 ```bash
 python3 image2excel/main.py
 ```
