@@ -46,3 +46,5 @@ python3 image2excel/main.py
 The output will be inside the `spreadsheets/` folder and it'll be a `.xlsx` file with the same name of your image.
 
 Have fun!
+
+- *Inspired by Matt Parker's [Stand-up comedy routine about Spreadsheets](https://youtu.be/UBX2QQHlQ_I).*
