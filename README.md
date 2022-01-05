@@ -47,4 +47,4 @@ The output will be inside the `spreadsheets/` folder and it'll be a `.xlsx` file
 
 Have fun!
 
-- *Inspired by Matt Parker's [Stand-up comedy routine about Spreadsheets](https://youtu.be/UBX2QQHlQ_I).*
+<p align="right"> <i>Inspired by Matt Parker's <a href="https://youtu.be/UBX2QQHlQ_I">Stand-up comedy routine about Spreadsheets</a>.</i> </p>
