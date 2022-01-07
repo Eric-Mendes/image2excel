@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 from openpyxl import load_workbook, styles, utils
 from PIL import Image
-
+ 
 if __name__ == "__main__":
     config_parser = ConfigParser()
     config_parser.read("image2excel/config.ini")
