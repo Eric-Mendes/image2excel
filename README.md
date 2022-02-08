@@ -1,4 +1,6 @@
 # image2excel
+> This repo is now archived. Please refer to https://github.com/Eric-Mendes/unexpected-isaves in case you still want to draw an image on a spreadsheet.
+
 Draws an image on Excel
 
 ![image](https://user-images.githubusercontent.com/42689328/148095762-8e1b83e4-8923-49ab-bfdd-6d1c75af6450.png)
